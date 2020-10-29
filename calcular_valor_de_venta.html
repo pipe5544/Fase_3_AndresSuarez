@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Andes Electronica</title>
+  </head>
+  <script>
+    function operar()
+      {
+        var v1 = document.f1.v.value;
+        var pu1 = document.f1.pu.value;
+        var pi1 = document.f1.pi.value;
+        var tv1 = document.f1.tv.value;
+        var vg1 = document.f1.vg.value;
+        var vg1=(parseFloat(v1)*parseFloat(pu1))/100;
+        var tv1=(parseFloat(v1)*parseFloat(pi1))/100;
+        var tv1=(parseFloat(v1)+parseFloat(vg1)+parseFloat(tv1))
+        document.f1.vg.value=vg1;
+        document.f1.tv.value=tv1;
+      }
+  </script>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Administrador<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Inventarios
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="ingresarproductos.html">Ingresar productos</a>
+                <a class="dropdown-item" href="actualizarproductos.html">Actualizar productos</a>
+                <a class="dropdown-item" href="eliminarproductos.html">Eliminar productos</a>
+                <a class="dropdown-item" href="consultarproductos.html">Consultar productos</a>
+                
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ventas</a>
+              
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Utilidades
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="calcular_valor_de_venta.html">Calcular valor de venta</a>
+                <a class="dropdown-item" href="calcular_resistencia.html">Calcular_valor_de_resistencia</a>
+              </div>
+            </li>
+           
+          </ul>
+          
+        </div>
+      </nav>
+      <div class="container">
+      <h3>Calcular valor de venta</h3>
+      <form action="form-horizontal" name="f1" action="calcular_valor_de_venta.html" method="POST">
+        <div class="form-group">
+          <label for="valor_producto">Valor de compra del producto</label>
+          <input type="text" class="form-control" name="v" id="valor_producto" placeholder="ingrese numero">
+        </div>
+        <div class="form-group">
+          <label for="porcentaje_utilidad">Porcentaje de utilida</label>
+          <input type="text" class="form-control" name="pu" id="porcentaje_utilidad" placeholder="ingrese porcentaje">
+        </div>
+        <div class="form-group">
+          <label for="porcentaje_IVA">Porcentaje de impuesto IVA</label>
+          <input type="text" class="form-control" name="pi" id="porcentaje_IVA" placeholder="ingrese porcentaje">
+        </div>
+         <br>
+         <div class="col-3">
+           <button class="btn btn-success" type="button" id="btncalcular_valor_de_venta" onclick="operar()">Calcular venta</button>
+         </div> 
+         <br>
+         <div class="form-group">
+          <label for="valor_venta">Valor de venta del producto</label>
+          <input type="text" class="form-control" name="tv" id="valor_venta" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="utilidada">Valor de ganancia del producto</label>
+          <input type="text" class="form-control" name="vg" id="utilidada" placeholder="">
+        </div>
+      </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
